@@ -1,0 +1,36 @@
+.navbar {
+  background: linear-gradient(to right, #7f5af0, #5d3eff);
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.navbar-links a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: #f0f0f0;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.navbar-links a.active {
+  border-bottom: 2px solid white;
+}
+
+.navbar-links button {
+  margin-left: 20px;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  background-color: #f25f4c;
+  color: white;
+  cursor: pointer;
+}
