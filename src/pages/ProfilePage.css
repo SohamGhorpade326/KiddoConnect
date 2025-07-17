@@ -1,117 +1,147 @@
 .profile-page {
   width: 100%;
   min-height: 100vh;
-  background-color: #f7f7f7;
   padding: 40px 20px;
-  box-sizing: border-box;
-   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-image: url("https://t4.ftcdn.net/jpg/02/42/22/57/360_F_242225735_HuCvYbNKVv9TdnHWQo8iLI1JunPJ1YX9.jpg");
+  margin: 0;
+  background-image: url("https://img.freepik.com/free-vector/game-landscape-with-tropical-plants_105738-749.jpg?semt=ais_hybrid&w=740");
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-attachment: fixed;
   background-position: center;
+  font-family: 'Comic Sans MS', 'Segoe UI', cursive;
 }
 
 .profile-container {
   max-width: 1000px;
   margin: auto;
-  background: white;
+  background: greenyellow;
   padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
 .profile-section {
   display: flex;
-  flex-wrap: wrap;
+  align-items: flex-start;
   gap: 30px;
-  align-items: center;
   margin-bottom: 40px;
+  flex-wrap: wrap;
+   background: rgb(226, 241, 9);
+  
 }
 
 .profile-avatar {
-  width: 120px;
-  height: 120px;
+  width: 130px;
+  height: 130px;
+  min-width: 130px;
   border-radius: 50%;
-  border: 2px solid #ddd;
+  border: 3px dashed #ffbb00;
+  background-color: #fff5d7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: bold;
+  color: #000;
 }
+.profile-display-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
 
 .profile-details {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
+  padding-left: 200px;
+  background-color: #f0f4f3;
 }
 
 .profile-details input,
 .profile-details textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
+  padding: 12px;
+  border: 2px dashed #ffcc70;
+  border-radius: 12px;
+  font-size: 15px;
+  background-color: #fff;
 }
 
 .button-group {
   display: flex;
-  gap: 10px;
-  margin-top: 10px;
+  gap: 12px;
+  margin-top: 12px;
 }
 
 .btn {
-  padding: 10px 16px;
-  border-radius: 6px;
+  padding: 10px 18px;
+  border-radius: 12px;
   border: none;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .btn-save {
-  background-color: #007bff;
+  background-color: #00c897;
   color: white;
 }
 
 .btn-cancel {
-  background-color: #ccc;
+  background-color: #ff6b6b;
+  color: white;
 }
 
 .btn-edit {
-  background-color: #28a745;
+  background-color: #ffa41b;
   color: white;
   width: fit-content;
-  padding: 8px 14px;
+  padding: 10px 16px;
   margin-top: 10px;
 }
 
 .users-section h3 {
   margin-bottom: 20px;
-  font-size: 20px;
+  font-size: 22px;
+  text-align: center;
+  color: #3a3a3a;
 }
 
 .users-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 20px;
 }
 
 .user-card {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 15px;
-  padding: 15px;
+  gap: 8px;
+  padding: 16px;
   background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+}
+
+.user-card:hover {
+  transform: scale(1.03);
 }
 
 .user-avatar {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
+  border: 2px solid #ffd166;
 }
 
 .user-name {
   font-weight: bold;
+  font-size: 16px;
+  color: #444;
 }
 
 .user-email {
@@ -119,6 +149,7 @@
   color: #777;
 }
 
+/* Animations */
 .fade-in {
   animation: fadeIn 0.6s ease-in;
 }
@@ -129,14 +160,13 @@
   animation: popIn 0.5s ease-in;
 }
 .card-glow {
-  box-shadow: 0 0 10px rgba(0, 150, 255, 0.3);
+  box-shadow: 0 0 10px rgba(255, 200, 0, 0.3);
   transition: box-shadow 0.3s ease-in-out;
 }
 .card-glow:hover {
-  box-shadow: 0 0 20px rgba(0, 150, 255, 0.5);
+  box-shadow: 0 0 20px rgba(255, 200, 0, 0.5);
 }
 
-/* Animations */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -148,4 +178,26 @@
 @keyframes popIn {
   0% { transform: scale(0.9); opacity: 0; }
   100% { transform: scale(1); opacity: 1; }
+}
+.profile-main-wrapper {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.left-section {
+  flex: 1;
+  min-width: 280px;
+}
+
+.right-section {
+  flex: 1.2;
+  min-width: 320px;
+}
+
+@media (max-width: 768px) {
+  .profile-main-wrapper {
+    flex-direction: column;
+  }
 }

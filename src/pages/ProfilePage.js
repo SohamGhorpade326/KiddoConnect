@@ -53,59 +53,64 @@ export default function ProfilePage() {
           />
           <div className="profile-details card-glow">
             {isEditing ? (
-              <>
-                <input
-                  name="name"
-                  value={formData.name}
-                  placeholder="Name"
-                  onChange={e => setFormData(f => ({ ...f, name: e.target.value }))}
-                />
-                <textarea
-                  name="bio"
-                  value={formData.bio}
-                  placeholder="Bio"
-                  onChange={e => setFormData(f => ({ ...f, bio: e.target.value }))}
-                />
-                <input
-                  name="phone"
-                  value={formData.phone}
-                  placeholder="Phone"
-                  onChange={e => setFormData(f => ({ ...f, phone: e.target.value }))}
-                />
-                <input
-                  type="number"
-                  name="age"
-                  value={formData.age}
-                  placeholder="Age"
-                  onChange={e => setFormData(f => ({ ...f, age: e.target.value }))}
-                />
-                <input
-                  name="social"
-                  value={formData.social}
-                  placeholder="Social Link"
-                  onChange={e => setFormData(f => ({ ...f, social: e.target.value }))}
-                />
-                <div className="button-group">
-                  <button onClick={saveProfile} className="btn btn-save">Save</button>
-                  <button onClick={() => setIsEditing(false)} className="btn btn-cancel">Cancel</button>
-                </div>
-              </>
-            ) : (
-              <>
-                <h2>{myProfile.name}</h2>
-                <p>{myProfile.email}</p>
-                <p><strong>Bio:</strong> {myProfile.bio || 'N/A'}</p>
-                <p><strong>Phone:</strong> {myProfile.phone || 'N/A'}</p>
-                <p><strong>Age:</strong> {myProfile.age || 'N/A'}</p>
-                <p>
-                  <strong>Social:</strong>{' '}
-                  {myProfile.social ? (
-                    <a href={myProfile.social} target="_blank" rel="noopener noreferrer">{myProfile.social}</a>
-                  ) : 'N/A'}
-                </p>
-                <button onClick={() => setIsEditing(true)} className="btn btn-edit">Edit Profile</button>
-              </>
-            )}
+              
+  <>
+    <div className="profile-form-row">
+      <input
+        name="name"
+        value={formData.name}
+        placeholder="👦 Name"
+        onChange={e => setFormData(f => ({ ...f, name: e.target.value }))}
+      />
+      <input
+        name="phone"
+        value={formData.phone}
+        placeholder="📱 Phone"
+        onChange={e => setFormData(f => ({ ...f, phone: e.target.value }))}
+      />
+      <input
+        type="number"
+        name="age"
+        value={formData.age}
+        placeholder="🎂 Age"
+        onChange={e => setFormData(f => ({ ...f, age: e.target.value }))}
+      />
+      <input
+        name="social"
+        value={formData.social}
+        placeholder="🔗 Social Link"
+        onChange={e => setFormData(f => ({ ...f, social: e.target.value }))}
+      />
+    </div>
+    <textarea
+      className="profile-bio"
+      name="bio"
+      value={formData.bio}
+      placeholder="📝 Tell us something about you..."
+      onChange={e => setFormData(f => ({ ...f, bio: e.target.value }))}
+    />
+    <div className="button-group">
+      <button onClick={saveProfile} className="btn btn-save">Save</button>
+      <button onClick={() => setIsEditing(false)} className="btn btn-cancel">Cancel</button>
+    </div>
+  </>
+) : (
+  <>
+    <h2>{myProfile.name}</h2>
+    <p>{myProfile.email}</p>
+    <div className="profile-display-row">
+      <p><strong>📱 Phone:</strong> {myProfile.phone || 'N/A'}</p>
+      <p><strong>🎂 Age:</strong> {myProfile.age || 'N/A'}</p>
+      <p><strong>🔗 Social:</strong> {myProfile.social
+        ? <a href={myProfile.social} target="_blank" rel="noopener noreferrer">{myProfile.social}</a>
+        : 'N/A'}
+      </p>
+    </div>
+    <p><strong>📝 Bio:</strong> {myProfile.bio || 'N/A'}</p>
+    <button onClick={() => setIsEditing(true)} className="btn btn-edit">Edit Profile</button>
+  </>
+)}
+
           </div>
         </div>
 
